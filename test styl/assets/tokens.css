@@ -1,0 +1,150 @@
+/* ============================================================
+   Tooliva Design System — Design Tokens v2
+   Direction (A): quiet professionalism + one gradient accent.
+   Light mode only. Two accent themes: warm orange (default)
+   and emerald (toggle for comparison).
+   ============================================================ */
+
+:root {
+  /* --- Brand scale: WARM ORANGE (default) --- */
+  --brand-50: #fff7ed;
+  --brand-100: #ffedd5;
+  --brand-200: #fed7aa;
+  --brand-300: #fdba74;
+  --brand-400: #fb923c;
+  --brand-500: #f97316;
+  --brand-600: #ea580c;
+  --brand-700: #c2410c;
+  --brand-800: #9a3412;
+  --brand-900: #7c2d12;
+
+  --primary: var(--brand-600);
+  --primary-hover: var(--brand-700);
+  --primary-soft: var(--brand-50);
+  --primary-ring: rgba(234, 88, 12, 0.32);
+  --accent-grad: linear-gradient(120deg, #fb923c, #ea580c 45%, #c2410c);
+
+  /* --- Neutral scale (warm gray) --- */
+  --gray-0: #ffffff;
+  --gray-50: #faf9f7;
+  --gray-100: #f5f4f2;
+  --gray-200: #e9e7e4;
+  --gray-300: #d6d3cf;
+  --gray-400: #a8a29b;
+  --gray-500: #78716c;
+  --gray-600: #57534e;
+  --gray-700: #44403c;
+  --gray-800: #292524;
+  --gray-900: #1c1917;
+  --gray-950: #0c0a09;
+
+  /* --- Semantic --- */
+  --success: #059669;
+  --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
+  --warning: #d97706;
+  --warning-bg: #fffbeb;
+  --warning-border: #fde68a;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+  --info: #2563eb;
+  --info-bg: #eff6ff;
+  --info-border: #bfdbfe;
+
+  /* --- Alias tokens --- */
+  --bg: var(--gray-0);
+  --bg-subtle: var(--gray-50);
+  --surface: var(--gray-0);
+  --surface-raised: var(--gray-0);
+  --border: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --text-1: var(--gray-900);
+  --text-2: var(--gray-600);
+  --text-3: var(--gray-500);
+  --text-invert: var(--gray-0);
+  --text-on-primary: #ffffff;
+
+  /* --- Typography --- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* --- Spacing (4px scale) --- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-10: 2.5rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
+
+  /* --- Radius --- */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-xs: 0 1px 2px rgba(28, 25, 23, 0.05);
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.07), 0 1px 2px rgba(28, 25, 23, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(28, 25, 23, 0.1), 0 2px 4px -2px rgba(28, 25, 23, 0.06);
+  --shadow-lg: 0 12px 32px -8px rgba(28, 25, 23, 0.16), 0 4px 12px -4px rgba(28, 25, 23, 0.08);
+  --shadow-xl: 0 24px 60px -12px rgba(28, 25, 23, 0.22), 0 8px 24px -8px rgba(28, 25, 23, 0.1);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur: 220ms;
+  --dur-slow: 380ms;
+
+  /* --- Layout --- */
+  --container: 1180px;
+  --container-narrow: 760px;
+  --header-h: 72px;
+}
+
+/* Emerald accent (toggle) */
+:root[data-accent="emerald"] {
+  --brand-50: #ecfdf5;
+  --brand-100: #d1fae5;
+  --brand-200: #a7f3d0;
+  --brand-300: #6ee7b7;
+  --brand-400: #34d399;
+  --brand-500: #10b981;
+  --brand-600: #059669;
+  --brand-700: #047857;
+  --brand-800: #065f46;
+  --brand-900: #064e3b;
+
+  --primary: var(--brand-600);
+  --primary-hover: var(--brand-700);
+  --primary-soft: var(--brand-50);
+  --primary-ring: rgba(5, 150, 105, 0.32);
+  --accent-grad: linear-gradient(120deg, #34d399, #059669 45%, #047857);
+}
+
+/* Directional arrow auto-flip for RTL/LTR */
+.dir-flip {
+  display: inline-block;
+}
+[dir="rtl"] .dir-flip {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,180 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.19.0
+2 info using node@v24.20.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\RAYAN - HAK\Desktop\Project\tooliva\.npmrc
+5 silly config load:file:C:\Users\RAYAN - HAK\.npmrc
+6 silly config load:file:C:\Users\RAYAN - HAK\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm audit
+8 verbose argv "audit" "--omit" "dev" "--json" "--cache" "C:\\Users\\RAYAN - HAK\\Desktop\\Project\\.npm-cache-tooliva"
+9 verbose logfile logs-max:10 dir:C:\Users\RAYAN - HAK\Desktop\Project\.npm-cache-tooliva\_logs\2026-10-18T13_47_39_498Z-
+10 verbose logfile C:\Users\RAYAN - HAK\Desktop\Project\.npm-cache-tooliva\_logs\2026-10-18T13_47_39_498Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly audit bulk request {
+13 silly audit   '@emnapi/runtime': [ '1.11.3' ],
+13 silly audit   '@img/colour': [ '1.1.0' ],
+13 silly audit   '@img/sharp-darwin-arm64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-darwin-x64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-freebsd-wasm32': [ '0.35.5' ],
+13 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-arm': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linux-x64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.3.4' ],
+13 silly audit   '@img/sharp-linux-arm': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linux-arm64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linux-ppc64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linux-riscv64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linux-s390x': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linux-x64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-linuxmusl-x64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-wasm32': [ '0.35.5' ],
+13 silly audit   '@img/sharp-webcontainers-wasm32': [ '0.35.5' ],
+13 silly audit   '@img/sharp-win32-arm64': [ '0.35.5' ],
+13 silly audit   '@img/sharp-win32-ia32': [ '0.35.5' ],
+13 silly audit   '@img/sharp-win32-x64': [ '0.35.5' ],
+13 silly audit   '@napi-rs/canvas': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-android-arm64': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-darwin-arm64': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-darwin-x64': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-arm-gnueabihf': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-arm64-gnu': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-arm64-musl': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-riscv64-gnu': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-x64-gnu': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-linux-x64-musl': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-win32-arm64-msvc': [ '1.0.8' ],
+13 silly audit   '@napi-rs/canvas-win32-x64-msvc': [ '1.0.8' ],
+13 silly audit   '@next/env': [ '16.3.8' ],
+13 silly audit   '@next/swc-darwin-arm64': [ '16.3.8' ],
+13 silly audit   '@next/swc-darwin-x64': [ '16.3.8' ],
+13 silly audit   '@next/swc-linux-arm64-gnu': [ '16.3.8' ],
+13 silly audit   '@next/swc-linux-arm64-musl': [ '16.3.8' ],
+13 silly audit   '@next/swc-linux-x64-gnu': [ '16.3.8' ],
+13 silly audit   '@next/swc-linux-x64-musl': [ '16.3.8' ],
+13 silly audit   '@next/swc-win32-arm64-msvc': [ '16.3.8' ],
+13 silly audit   '@next/swc-win32-x64-msvc': [ '16.3.8' ],
+13 silly audit   '@pdf-lib/standard-fonts': [ '1.0.0' ],
+13 silly audit   '@pdf-lib/upng': [ '1.0.1' ],
+13 silly audit   '@pdfsmaller/pdf-decrypt': [ '1.0.1' ],
+13 silly audit   '@pdfsmaller/pdf-encrypt': [ '1.2.0' ],
+13 silly audit   '@swc/helpers': [ '0.5.23' ],
+13 silly audit   tslib: [ '1.14.1', '2.8.1' ],
+13 silly audit   '@types/node': [ '25.9.5' ],
+13 silly audit   semver: [ '7.8.5' ],
+13 silly audit   'ansi-regex': [ '5.0.1' ],
+13 silly audit   'ansi-styles': [ '4.3.0' ],
+13 silly audit   'baseline-browser-mapping': [ '2.11.20' ],
+13 silly audit   'bmp-js': [ '0.1.0' ],
+13 silly audit   camelcase: [ '5.3.1' ],
+13 silly audit   'caniuse-lite': [ '1.0.30001810' ],
+13 silly audit   'client-only': [ '0.0.1' ],
+13 silly audit   cliui: [ '6.0.0' ],
+13 silly audit   'color-convert': [ '2.0.1' ],
+13 silly audit   'color-name': [ '1.1.4' ],
+13 silly audit   'core-util-is': [ '1.0.3' ],
+13 silly audit   decamelize: [ '1.2.0' ],
+13 silly audit   'detect-libc': [ '2.1.2' ],
+13 silly audit   dijkstrajs: [ '1.0.3' ],
+13 silly audit   docx: [ '9.7.1' ],
+13 silly audit   nanoid: [ '5.1.16', '3.3.18' ],
+13 silly audit   'undici-types': [ '7.24.6' ],
+13 silly audit   'emoji-regex': [ '8.0.0' ],
+13 silly audit   'find-up': [ '4.1.0' ],
+13 silly audit   'get-caller-file': [ '2.0.5' ],
+13 silly audit   'hash.js': [ '1.1.7' ],
+13 silly audit   'idb-keyval': [ '6.3.0' ],
+13 silly audit   immediate: [ '3.0.6' ],
+13 silly audit   inherits: [ '2.0.4' ],
+13 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+13 silly audit   'is-url': [ '1.2.4' ],
+13 silly audit   isarray: [ '1.0.0' ],
+13 silly audit   jszip: [ '3.10.1' ],
+13 silly audit   lie: [ '3.3.0' ],
+13 silly audit   'locate-path': [ '5.0.0' ],
+13 silly audit   'lucide-react': [ '0.511.0' ],
+13 silly audit   'minimalistic-assert': [ '1.0.1' ],
+13 silly audit   next: [ '16.3.8' ],
+13 silly audit   postcss: [ '8.5.23' ],
+13 silly audit   'node-fetch': [ '2.7.0' ],
+13 silly audit   'opencollective-postinstall': [ '2.0.3' ],
+13 silly audit   'p-limit': [ '2.3.0' ],
+13 silly audit   'p-locate': [ '4.1.0' ],
+13 silly audit   'p-try': [ '2.2.0' ],
+13 silly audit   pako: [ '1.0.11' ],
+13 silly audit   'path-exists': [ '4.0.0' ],
+13 silly audit   'pdf-lib': [ '1.17.1' ],
+13 silly audit   'pdfjs-dist': [ '6.3.289' ],
+13 silly audit   picocolors: [ '1.1.1' ],
+13 silly audit   pngjs: [ '5.0.0' ],
+13 silly audit   'process-nextick-args': [ '2.0.1' ],
+13 silly audit   qrcode: [ '1.5.4' ],
+13 silly audit   react: [ '19.2.8' ],
+13 silly audit   'react-dom': [ '19.2.8' ],
+13 silly audit   'readable-stream': [ '2.3.8' ],
+13 silly audit   'regenerator-runtime': [ '0.13.11' ],
+13 silly audit   'require-directory': [ '2.1.1' ],
+13 silly audit   'require-main-filename': [ '2.0.0' ],
+13 silly audit   'safe-buffer': [ '5.1.2' ],
+13 silly audit   sax: [ '1.6.1' ],
+13 silly audit   scheduler: [ '0.27.0' ],
+13 silly audit   'set-blocking': [ '2.0.0' ],
+13 silly audit   setimmediate: [ '1.0.5' ],
+13 silly audit   sharp: [ '0.35.5' ],
+13 silly audit   'source-map-js': [ '1.2.1' ],
+13 silly audit   string_decoder: [ '1.1.1' ],
+13 silly audit   'string-width': [ '4.2.3' ],
+13 silly audit   'strip-ansi': [ '6.0.1' ],
+13 silly audit   'styled-jsx': [ '5.1.6' ],
+13 silly audit   'tesseract.js': [ '7.0.0' ],
+13 silly audit   'tesseract.js-core': [ '7.0.0' ],
+13 silly audit   tr46: [ '0.0.3' ],
+13 silly audit   'util-deprecate': [ '1.0.2' ],
+13 silly audit   'wasm-feature-detect': [ '1.9.0' ],
+13 silly audit   'webidl-conversions': [ '3.0.1' ],
+13 silly audit   'whatwg-url': [ '5.0.0' ],
+13 silly audit   'which-module': [ '2.0.1' ],
+13 silly audit   'wrap-ansi': [ '6.2.0' ],
+13 silly audit   xml: [ '1.0.1' ],
+13 silly audit   'xml-js': [ '1.6.11' ],
+13 silly audit   y18n: [ '4.0.3' ],
+13 silly audit   yargs: [ '15.4.1' ],
+13 silly audit   'yargs-parser': [ '18.1.3' ],
+13 silly audit   zlibjs: [ '0.3.1' ]
+13 silly audit }
+14 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 684ms
+15 silly audit report {
+15 silly audit report   'source-map-js': [
+15 silly audit report     {
+15 silly audit report       id: 1241209,
+15 silly audit report       url: 'https://github.com/advisories/GHSA-68fv-2mgg-jv7q',
+15 silly audit report       title: 'source-map-js allows event-loop denial of service through indexed source-map section offsets',
+15 silly audit report       severity: 'high',
+15 silly audit report       vulnerable_versions: '>=1.0.0 <1.2.2',
+15 silly audit report       cwe: [Array],
+15 silly audit report       cvss: [Object]
+15 silly audit report     }
+15 silly audit report   ]
+15 silly audit report }
+16 silly packumentCache corgi:https://registry.npmjs.org/source-map-js cache-miss
+17 http cache https://registry.npmjs.org/source-map-js 23ms (cache hit)
+18 silly packumentCache corgi:https://registry.npmjs.org/source-map-js set size:8534 disposed:false
+19 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fnode cache-miss
+20 silly packumentCache corgi:https://registry.npmjs.org/postcss cache-miss
+21 http cache https://registry.npmjs.org/postcss 15ms (cache hit)
+22 silly packumentCache corgi:https://registry.npmjs.org/postcss set size:359668 disposed:false
+23 http cache https://registry.npmjs.org/@tailwindcss%2fnode 25ms (cache hit)
+24 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fnode set size:852036 disposed:false
+25 verbose cwd C:\Users\RAYAN - HAK\Desktop\Project\tooliva
+26 verbose os Windows_NT 10.0.19045
+27 verbose node v24.20.0
+28 verbose npm  v11.19.0
+29 verbose exit 1
+30 verbose code 1

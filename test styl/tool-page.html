@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-accent="orange">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooliva</title>
+  <meta name="description" content="حوّل PDF إلى Word — Tooliva" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/reset.css" />
+  <link rel="stylesheet" href="assets/tokens.css" />
+  <link rel="stylesheet" href="assets/components.css" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Tooliva">
+        <span class="logo__mark" aria-hidden="true">T</span>
+        Tooliva<span class="logo__dot">.</span>
+      </a>
+      <div class="header-actions">
+        <div class="accent-switch" role="group" aria-label="اختيار اللون">
+          <span class="accent-dot accent-dot--orange" data-accent="orange" aria-pressed="true" title="برتقالي"></span>
+          <span class="accent-dot accent-dot--emerald" data-accent="emerald" aria-pressed="false" title="زمردي"></span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="اللغة">
+          <button class="lang-opt" type="button" data-lang="ar" aria-pressed="true">عربي</button>
+          <button class="lang-opt" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a href="index.html" class="btn btn--ghost btn--sm"><span class="dir-flip" aria-hidden="true">←</span> <span data-i18n="tool.back"></span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="container" style="padding-block: var(--s-10) var(--s-16);">
+    <!-- Tool hero -->
+    <header style="margin-block-end: var(--s-8); text-align: center;">
+      <span class="badge-pill"><span class="badge-pill__dot" aria-hidden="true"></span><span data-i18n="tool.badge"></span></span>
+      <h1 class="hero__title" style="font-size: clamp(2rem, 5vw, 2.9rem); margin-block-start: var(--s-5);" data-i18n="tool.title"></h1>
+      <p class="hero__subtitle" style="margin-block-start: var(--s-3); max-width: 640px; margin-inline: auto;" data-i18n="tool.sub"></p>
+    </header>
+
+    <!-- ===================== WIZARD ===================== -->
+    <section class="card" style="max-width: 1180px; margin-inline: auto;">
+      <div class="card__body">
+        <!-- Stepper (4 steps) -->
+        <div class="stepper" role="list" aria-label="خطوات العملية">
+          <div class="stepper__step is-active" data-step="1" role="listitem">
+            <span class="stepper__circle">1</span><span class="stepper__label" data-i18n="wiz.step1"></span>
+          </div>
+          <span class="stepper__sep" data-sep="1" aria-hidden="true"></span>
+          <div class="stepper__step" data-step="2" role="listitem">
+            <span class="stepper__circle">2</span><span class="stepper__label" data-i18n="wiz.step2"></span>
+          </div>
+          <span class="stepper__sep" data-sep="2" aria-hidden="true"></span>
+          <div class="stepper__step" data-step="3" role="listitem">
+            <span class="stepper__circle">3</span><span class="stepper__label" data-i18n="wiz.step3"></span>
+          </div>
+          <span class="stepper__sep" data-sep="3" aria-hidden="true"></span>
+          <div class="stepper__step" data-step="4" role="listitem">
+            <span class="stepper__circle">4</span><span class="stepper__label" data-i18n="wiz.step4"></span>
+          </div>
+        </div>
+
+        <!-- STEP: upload -->
+        <div id="wz-upload">
+          <div class="dropzone" role="button" tabindex="0" aria-label="اختر ملف PDF للرفع" data-dropzone data-dragover="false">
+            <span class="dropzone__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M12 4 8 8M12 4l4 4M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            </span>
+            <span class="dropzone__title" data-i18n="drop.title"></span>
+            <span class="dropzone__hint"><span data-i18n="drop.hint"></span></span>
+            <span class="dropzone__limits" data-i18n="drop.limits"></span>
+            <input type="file" class="sr-only" id="file-input" accept=".pdf,application/pdf" data-file-input />
+          </div>
+          <p class="text-center" style="margin-block-start: var(--s-4); font-size: var(--text-xs); color: var(--text-3);">
+            <span aria-hidden="true">🔒</span> <span data-i18n="drop.note"></span>
+          </p>
+        </div>
+
+        <!-- STEP: quick check -->
+        <div id="wz-check" class="hidden">
+          <h3 class="text-center" style="font-size: var(--text-xl); font-weight: 800;" data-i18n="check.title"></h3>
+          <p class="text-center" style="color: var(--text-3); font-size: var(--text-sm); margin-block-start: var(--s-2);" data-i18n="check.desc"></p>
+          <div class="check-list mt-6">
+            <div class="check-item"><span class="check-item__icon" aria-hidden="true">✓</span><span class="check-item__label" data-i18n="check.size"></span><span class="check-item__value" data-check-size></span></div>
+            <div class="check-item"><span class="check-item__icon" aria-hidden="true">✓</span><span class="check-item__label" data-i18n="check.type"></span></div>
+            <div class="check-item"><span class="check-item__icon" aria-hidden="true">✓</span><span class="check-item__label" data-i18n="check.name"></span></div>
+            <div class="check-item"><span class="check-item__icon" aria-hidden="true">✓</span><span class="check-item__label" data-i18n="check.signature"></span></div>
+            <div class="check-item"><span class="check-item__icon" aria-hidden="true">✓</span><span class="check-item__label" data-i18n="check.done"></span></div>
+          </div>
+          <div class="check-done"><span aria-hidden="true">✓</span> <span data-i18n="check.continue"></span></div>
+        </div>
+
+        <!-- STEP: preview (studio) -->
+        <div id="wz-preview" class="hidden">
+          <div class="studio">
+            <aside class="studio__rail" aria-label="صفحات المستند">
+              <div class="rail__head">
+                <span data-i18n="viewer.rail"></span>
+                <span><span data-sel-count>5</span>/<span data-page-total>5</span></span>
+              </div>
+              <div class="rail__list" data-thumbs></div>
+            </aside>
+
+            <div class="studio__stage">
+              <div class="stage__toolbar">
+                <div class="tool-group">
+                  <button class="tool-btn" type="button" data-page-prev data-i18n-aria="preview.prevPage" aria-label="السابق">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                  </button>
+                  <input class="page-input" type="number" min="1" value="1" data-page-input aria-label="رقم الصفحة" />
+                  <span class="page-total">/ <span data-page-total>5</span></span>
+                  <button class="tool-btn" type="button" data-page-next data-i18n-aria="preview.nextPage" aria-label="التالي">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+                  </button>
+                </div>
+
+                <div class="tool-group">
+                  <button class="tool-btn" type="button" data-rotate data-i18n-aria="viewer.rotate" aria-label="تدوير">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+                  </button>
+                  <button class="tool-btn" type="button" data-zoom-out data-i18n-aria="viewer.zoomOut" aria-label="تصغير">−</button>
+                  <span class="zoom-label" data-zoom-label>100%</span>
+                  <button class="tool-btn" type="button" data-zoom-in data-i18n-aria="viewer.zoomIn" aria-label="تكبير">+</button>
+                  <button class="tool-btn" type="button" data-fit-width data-i18n-aria="viewer.fitWidth" aria-label="ملاءمة العرض">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                  </button>
+                  <button class="tool-btn" type="button" data-fit-page data-i18n-aria="viewer.fitPage" aria-label="ملاءمة الصفحة">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  </button>
+                  <button class="tool-btn" type="button" data-fullscreen data-i18n-aria="viewer.fullscreen" aria-label="ملء الشاشة">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                  </button>
+                  <button class="tool-btn" type="button" data-reset-view data-i18n-aria="viewer.reset" aria-label="إعادة الضبط">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="stage__viewport" data-viewport tabindex="0" role="img" aria-label="معاينة الصفحة">
+                <div class="stage__paper" data-paper></div>
+              </div>
+              <p class="stage__hint" data-i18n="viewer.hint"></p>
+            </div>
+          </div>
+
+          <div class="preview__actions" style="margin-block-start: var(--s-5); max-width: 440px; margin-inline: auto;">
+            <button class="btn btn--secondary" type="button" data-goto="upload" data-i18n="preview.back"></button>
+            <button class="btn btn--primary" type="button" data-goto="settings" data-i18n="settings.next"></button>
+          </div>
+        </div>
+
+        <!-- STEP: settings (API-level options) -->
+        <div id="wz-settings" class="hidden">
+          <div class="text-center" style="margin-block-end: var(--s-6);">
+            <h3 style="font-size: var(--text-xl); font-weight: 800;" data-i18n="settings.title"></h3>
+            <p style="color: var(--text-3); font-size: var(--text-sm); margin-block-start: var(--s-2);" data-i18n="settings.desc"></p>
+          </div>
+
+          <div class="settings">
+            <!-- Output file -->
+            <div class="set-card">
+              <div class="set-card__head">
+                <span class="set-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+                <span class="set-card__title" data-i18n="settings.output"></span>
+              </div>
+              <div class="set-card__body">
+                <div class="opt-row">
+                  <label class="opt-label" for="out-name" data-i18n="opt.filename"></label>
+                  <input class="field__input" id="out-name" type="text" data-output-name />
+                </div>
+                <div class="opt-row">
+                  <span class="opt-label" data-i18n="opt.format"></span>
+                  <div class="radio-cards" data-radio="format">
+                    <label class="radio-card">
+                      <input type="radio" name="format" value="docx" checked />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title">Word</span><span class="radio-card__desc">.docx</span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="format" value="doc" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title">Word 97</span><span class="radio-card__desc">.doc</span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="format" value="rtf" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title">RTF</span><span class="radio-card__desc">.rtf</span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="format" value="txt" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title">Text</span><span class="radio-card__desc">.txt</span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="opt-row">
+                  <span class="opt-label" data-i18n="opt.mode"></span>
+                  <div class="radio-cards" data-radio="mode">
+                    <label class="radio-card">
+                      <input type="radio" name="mode" value="layout" checked />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.modeLayout"></span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="mode" value="editable" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.modeEditable"></span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pages -->
+            <div class="set-card">
+              <div class="set-card__head">
+                <span class="set-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+                <span class="set-card__title" data-i18n="settings.pages"></span>
+              </div>
+              <div class="set-card__body">
+                <div class="sel-bar">
+                  <span class="sel-count"><span data-sel-count>5</span> / <span data-page-total>5</span> <span data-i18n="settings.selected"></span></span>
+                  <span class="sel-actions">
+                    <button type="button" data-sel-all data-i18n="settings.selectAll"></button>
+                    <button type="button" data-sel-none data-i18n="settings.clearAll"></button>
+                  </span>
+                </div>
+                <p class="set-hint" data-i18n="settings.pagesHint"></p>
+                <label class="toggle">
+                  <input type="checkbox" data-opt="onlySelected" />
+                  <span class="toggle__body"><span class="toggle__label" data-i18n="settings.onlySelected"></span></span>
+                  <span class="toggle__switch" aria-hidden="true"></span>
+                </label>
+                <div class="opt-row">
+                  <span class="opt-label" data-i18n="opt.batch"></span>
+                  <div class="radio-cards" data-radio="batch">
+                    <label class="radio-card">
+                      <input type="radio" name="batch" value="merge" checked />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.batchMerge"></span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="batch" value="separate" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.batchSeparate"></span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="set-card set-full">
+              <div class="set-card__head">
+                <span class="set-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg></span>
+                <span class="set-card__title" data-i18n="settings.content"></span>
+              </div>
+              <div class="set-card__body">
+                <div class="radio-cards" style="grid-template-columns: repeat(2, 1fr);">
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="images" checked />
+                    <span class="toggle__body"><span class="toggle__label" data-i18n="opt.images"></span></span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="tables" checked />
+                    <span class="toggle__body"><span class="toggle__label" data-i18n="opt.preserveTables"></span></span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="links" checked />
+                    <span class="toggle__body"><span class="toggle__label" data-i18n="opt.preserveLinks"></span></span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="notes" />
+                    <span class="toggle__body"><span class="toggle__label" data-i18n="opt.includeNotes"></span></span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                </div>
+                <div class="opt-row">
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="ocr" />
+                    <span class="toggle__body">
+                      <span class="toggle__label" data-i18n="opt.ocr"></span>
+                      <span class="toggle__desc" data-i18n="opt.ocrDesc"></span>
+                    </span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                  <div class="radio-cards radio-cards--3" data-radio="ocrLang">
+                    <label class="radio-card">
+                      <input type="radio" name="ocrLang" value="ara" checked />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.langAr"></span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="ocrLang" value="eng" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.langEn"></span></span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="ocrLang" value="both" />
+                      <span class="radio-card__dot"></span>
+                      <span class="radio-card__body"><span class="radio-card__title" data-i18n="opt.langBoth"></span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quality & security -->
+            <div class="set-card set-full">
+              <div class="set-card__head">
+                <span class="set-card__icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span class="set-card__title" data-i18n="settings.more"></span>
+              </div>
+              <div class="set-card__body">
+                <div class="radio-cards radio-cards--3" data-radio="quality">
+                  <label class="radio-card">
+                    <input type="radio" name="quality" value="high" checked />
+                    <span class="radio-card__dot"></span>
+                    <span class="radio-card__body"><span class="radio-card__title" data-i18n="quality.high"></span><span class="radio-card__desc" data-i18n="quality.highDesc"></span></span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="quality" value="medium" />
+                    <span class="radio-card__dot"></span>
+                    <span class="radio-card__body"><span class="radio-card__title" data-i18n="quality.medium"></span><span class="radio-card__desc" data-i18n="quality.mediumDesc"></span></span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="quality" value="low" />
+                    <span class="radio-card__dot"></span>
+                    <span class="radio-card__body"><span class="radio-card__title" data-i18n="quality.low"></span><span class="radio-card__desc" data-i18n="quality.lowDesc"></span></span>
+                  </label>
+                </div>
+                <div class="opt-row">
+                  <label class="toggle">
+                    <input type="checkbox" data-opt="protect" />
+                    <span class="toggle__body"><span class="toggle__label" data-i18n="opt.protect"></span></span>
+                    <span class="toggle__switch" aria-hidden="true"></span>
+                  </label>
+                  <div class="opt-row">
+                    <label class="opt-label" for="out-pass" data-i18n="opt.password"></label>
+                    <input class="field__input" id="out-pass" type="password" data-password disabled placeholder="" data-i18n-placeholder="opt.passwordPlaceholder" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="set-card set-full">
+              <div class="set-card__body" style="padding: var(--s-4);">
+                <div class="summary" style="border: none; background: none; padding: 0;">
+                  <div class="summary__title" data-i18n="opt.summary"></div>
+                  <div class="summary__row"><span data-i18n="opt.sumMode"></span><span data-sum-mode></span></div>
+                  <div class="summary__row"><span data-i18n="opt.sumFormat"></span><span data-sum-format></span></div>
+                  <div class="summary__row"><span data-i18n="opt.sumPages"></span><span data-sum-pages></span></div>
+                  <div class="summary__row"><span data-i18n="opt.sumSize"></span><span data-sum-size></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview__actions" style="margin-block-start: var(--s-5); max-width: 440px; margin-inline: auto;">
+            <button class="btn btn--secondary" type="button" data-goto="preview" data-i18n="preview.back"></button>
+            <button class="btn btn--primary" type="button" data-wizard-next data-i18n="opt.convert"></button>
+          </div>
+          <p class="text-center" style="margin-block-start: var(--s-3); font-size: var(--text-xs); color: var(--text-3);" data-i18n="opt.outputNote"></p>
+        </div>
+
+        <!-- STEP: processing -->
+        <div id="wz-process" class="hidden" role="status" aria-live="polite">
+          <div class="flex items-center gap-4" style="justify-content: center;">
+            <span class="spinner spinner--lg" style="color: var(--primary);" aria-hidden="true"></span>
+            <span style="font-size: var(--text-base); font-weight: 600;" data-i18n="proc.text"></span>
+          </div>
+          <div class="progress mt-4" aria-hidden="true"><div class="progress__bar"></div></div>
+        </div>
+
+        <!-- STEP: success -->
+        <div id="wz-success" class="hidden">
+          <div class="status-card status-card--success" role="status" aria-live="polite">
+            <span class="status-card__icon" aria-hidden="true">✓</span>
+            <span>
+              <span class="status-card__title" data-i18n="success.title"></span>
+              <span class="status-card__body" data-i18n="success.body"></span>
+            </span>
+          </div>
+          <button class="btn btn--secondary btn--block mt-4" type="button" data-reset-btn data-i18n="success.again"></button>
+        </div>
+
+        <!-- STEP: error -->
+        <div id="wz-error" class="hidden">
+          <div class="status-card status-card--error" role="alert" aria-live="assertive">
+            <span class="status-card__icon" aria-hidden="true">!</span>
+            <span>
+              <span class="status-card__title" data-i18n="error.title"></span>
+              <span class="status-card__body" data-i18n="error.body"></span>
+            </span>
+          </div>
+          <button class="btn btn--secondary btn--block mt-4" type="button" data-reset-btn data-i18n="error.retry"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limit chips -->
+    <div class="flex items-center gap-2 mt-6" style="justify-content: center; flex-wrap: wrap; font-size: var(--text-xs); color: var(--text-2);">
+      <span class="badge badge--available" data-i18n="chip.1"></span>
+      <span class="badge badge--available" data-i18n="chip.2"></span>
+      <span class="badge badge--available" data-i18n="chip.3"></span>
+    </div>
+
+    <!-- Info cards -->
+    <div class="info-grid" style="max-width: 920px; margin-inline: auto; margin-block-start: var(--s-12);">
+      <div class="info-card">
+        <span class="info-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <h3 class="info-card__title" data-i18n="side.f1t"></h3>
+        <p class="info-card__desc" data-i18n="side.f1d"></p>
+      </div>
+      <div class="info-card">
+        <span class="info-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3 class="info-card__title" data-i18n="side.f3t"></h3>
+        <p class="info-card__desc" data-i18n="side.f3d"></p>
+      </div>
+      <div class="info-card">
+        <span class="info-card__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></span>
+        <h3 class="info-card__title" data-i18n="side.f2t"></h3>
+        <p class="info-card__desc" data-i18n="side.f2d"></p>
+      </div>
+    </div>
+
+    <!-- Animated demo -->
+    <section style="margin-block-start: var(--s-16);">
+      <div class="section__head" style="justify-content: center; text-align: center;">
+        <div style="margin-inline: auto;">
+          <span class="section__eyebrow" data-i18n="demo.eyebrow"></span>
+          <h2 class="section__title" data-i18n="demo.title"></h2>
+          <p class="section__desc" data-i18n="demo.desc" style="margin-inline: auto;"></p>
+        </div>
+      </div>
+      <div class="card" style="margin-block-start: var(--s-8);">
+        <div class="pipeline" role="img" aria-label="عملية التحويل">
+          <div class="pipe-node">
+            <div class="pipe-doc pipe-doc--pdf">PDF</div>
+            <span class="pipe-label" data-i18n="demo.step1"></span>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="pipe-node">
+            <div class="pipe-doc pipe-doc--process"><span class="pipe-doc__gear" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></span></div>
+            <span class="pipe-label" data-i18n="demo.step2"></span>
+          </div>
+          <div class="pipe-arrow" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="pipe-node">
+            <div class="pipe-doc pipe-doc--word">W</div>
+            <span class="pipe-label" data-i18n="demo.step3"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__bottom" style="border: none; padding-block: 0;">
+      <span data-i18n="footer.rights"></span>
+      <nav class="footer-links" aria-label="روابط التذييل">
+        <a href="#" data-i18n="footer.l1"></a>
+        <a href="#" data-i18n="footer.l2"></a>
+        <a href="index.html" data-i18n="footer.c1"></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/i18n/ar.js"></script>
+  <script src="assets/i18n/en.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
